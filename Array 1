@@ -1,0 +1,32 @@
+#include <iostream>
+
+using namespace std;
+
+void main()
+{
+	int arr[5],cari,toggle=0;
+	
+	for(int i=0; i<5; i++)
+	{
+		cout<<"Masukan bilangan ke-"<<i+1<<" : ";
+		cin>>arr[i];
+	}
+	cout<<endl;
+	
+	cout<<"Input bilangan yg ingin di cari: ";
+	cin>>cari;
+	cout<<endl;
+
+	for(int i=0; i<5; i++)
+	{
+		if(cari==arr[i])
+		{
+			cout<<"Ketemu pada index ke-"<<i+1<<endl;
+			toggle = 1;
+		}
+	}
+	if(toggle == 0)
+	{
+		cout<<"Tidak ketemu"<<endl;
+	}
+}
