@@ -1,18 +1,20 @@
 #include <iostream>
+#include <conio.h>
+#include <iomanip>
 
 using namespace std;
 
 void nomor1()
 {
 	int arr[5],cari,toggle=0;
-	
+
 	for(int i=0; i<5; i++)
 	{
 		cout<<"Masukan bilangan ke-"<<i+1<<" : ";
 		cin>>arr[i];
 	}
 	cout<<endl;
-	
+
 	cout<<"Input bilangan yg ingin di cari: ";
 	cin>>cari;
 	cout<<endl;
@@ -29,16 +31,80 @@ void nomor1()
 	{
 		cout<<"Tidak ketemu"<<endl;
 	}
+	getch();
+	system("cls");
 }
 
 void nomor2()
 {
 	char arr[15] = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O'};
+	int indexarr = 0;
 	
-	for(int i = 0; i<15; i++)
+	cout<<"Array Pertama: "<<endl<<endl;
+	for(int i=0; i<3; i++)
 	{
-		
+		for(int j=0; j<5; j++)
+		{
+			cout<<arr[indexarr]<<" ";
+			indexarr;
+		}
+		indexarr=0;
+		cout<<endl;
 	}
+	cout<<endl;
+
+	char space = ' ';
+
+	cout<<"Array Kedua: "<<endl<<endl;
+	for(int i=0; i<5; i++)
+	{
+		for(int j=4-i; j>0; j--)
+		{
+			cout<<space<<" ";
+		}
+		for(int k=0; k<=i; k++)
+		{
+			cout<<arr[indexarr]<<" ";
+			indexarr++;
+		}
+		cout<<endl;
+	}
+	cout<<endl;
+
+	getch();
+	system("cls");
+}
+
+void nomor3()
+{
+	int n;
+	float arr[20],jumlah=0,rata;
+	ulang:;
+	cout<<"Berapa bilangan yg di input? ";
+	cin>>n;
+	cout<<endl;
+
+	if(n>20)
+	{
+		cout<<"Array tidak bisa lebih dari 20"<<endl;
+		getch();
+		system("cls");
+		goto ulang;
+	}
+
+	for(int i=0; i<n; i++)
+	{
+		cout<<"Input bilangan ke-"<<i+1<<" : ";
+		cin>>arr[i];
+		jumlah+=arr[i];
+	}
+	rata=jumlah/n;
+	cout<<endl;
+	cout<<"Jumlah bilangan yg dimasukan : "<<jumlah<<endl;
+	cout<<"Rata-rata : "<<rata<<endl<<endl;
+
+	getch();
+	system("cls");
 }
 
 void main()
@@ -48,10 +114,12 @@ void main()
 	cout<<" Menu : "<<endl<<endl;
 	cout<<" No.1 "<<endl;
 	cout<<" No.2 "<<endl;
-	
+	cout<<" No.3 "<<endl<<endl;
+
 	cout<<"Pilih menu: ";
 	cin>>pilih;
-	
+	system("cls");
+
 	if(pilih == 1)
 	{
 		nomor1();
@@ -60,6 +128,11 @@ void main()
 	else if(pilih == 2)
 	{
 		nomor2();
+		goto menu;
+	}
+	else if(pilih ==3)
+	{
+		nomor3();
 		goto menu;
 	}
 }
